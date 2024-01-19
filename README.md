@@ -68,3 +68,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Comecando como react 
+
+## COMPONENTES
+
+Primeiro aprendemos componentes, onde tudo é um compontente e pode ser reutilizado. 
+Podem ser criados de varias maneiras dpendendo da cultura de quem desenvolve. POdemos reparar no componente "Banner" e "CampoTexto", amos são componentes e são declarados de formas diferentes. O Banner tem um index.js e um Banner, onde o Banner tem o código do componente e o index tem um import e export para fazer o intermedio do componente ao app, já o CampoTexto está ligado direto no app.
+
