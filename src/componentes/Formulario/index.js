@@ -5,15 +5,8 @@ import ListaSuspensa from '../ListaSuspensa'
 import './Formulario.css'
 
 
-const Formulario = () => {
-    const times =[
-        'Tank',
-        'Atirador',
-        'Mago',
-        'Assassino',
-        'Suporte',
-        'Soldado'
-    ]
+const Formulario = (props) => {
+    
 
     const [nome, setNome] = useState('')
     const [classe, setClasse] = useState('')
@@ -22,7 +15,12 @@ const Formulario = () => {
 
     const aoSalvar = (evento) => {
         evento.preventDefault()
-        console.log('Form foi enviado =>', nome, classe, imagem, time)
+        props.aoJogadorCadastrado({
+            nome,
+            classe,
+            imagem,
+            time
+        })
     }
     return(
         <section className='formulario'>
@@ -51,12 +49,12 @@ const Formulario = () => {
             <ListaSuspensa 
             obrigatorio={true} 
             label="Time" 
-            itens={times} 
+            itens={props.nomesTimes} 
             valor={time}
             aoAlterado={valor => setTime(valor)}
             />
             <Botao > 
-                Criar card
+                Criar Card
             </Botao >
             </form>
         </section>
