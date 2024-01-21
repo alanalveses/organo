@@ -21,7 +21,12 @@ const Formulario = (props) => {
             imagem,
             time
         })
+        setNome('')
+        setClasse('')
+        setImagem('')
+        setTime('')
     }
+    
     return(
         <section className='formulario'>
             <form onSubmit={aoSalvar}>

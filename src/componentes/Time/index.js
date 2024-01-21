@@ -8,8 +8,10 @@ const Time = (props) => {
     return (
         <section className='time' style={{ backgroundColor: props.corSecundaria}}>
             <h3 style={{borderColor: props.corPrimaria}}>{props.nome}</h3>
-            <Jogador />
-            <Jogador />
+            <div className='jogadores'>
+                {props.jogadores.map( jogador => <Jogador nome={jogador.nome} classe={jogador.classe} imagem={jogador.imagem} /> )}
+
+            </div>
         </section>
     )
 }

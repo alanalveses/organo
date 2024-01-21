@@ -9,41 +9,41 @@ function App() {
     {
       nome: 'Tank',
       corPrimaria: '#57C278',
-      corSecundaria: '#D9F7D9',
+      corSecundaria: '#D9F7D9'
     },
     {
       nome: 'Atirador',
       corPrimaria: '#82CFFA',
-      corSecundaria: '#E8F8FF',
+      corSecundaria: '#E8F8FF'
     },
     {
       nome: 'Mago',
       corPrimaria: '#E06B69',
-    corSecundaria: '#FDE7E8',
+    corSecundaria: '#FDE7E8'
     },
     {
       nome: 'Assassino',
       corPrimaria: '#A6D157',
-    corSecundaria: '#F0F8E2',
+    corSecundaria: '#F0F8E2'
     },
     {
       nome: 'Suporte',
       corPrimaria: '#D86EBF',
-    corSecundaria: '#FAE5F5',
+    corSecundaria: '#FAE5F5'
     },
     {
       nome: 'Soldado',
       corPrimaria: '#FEBA05',
-    corSecundaria: '#FFF5D9',
+    corSecundaria: '#FFF5D9'
     },
     {
       nome: 'Multiplas Classes',
       corPrimaria: '#FF8A29',
-      corSecundaria: '#FFEEDF',
+      corSecundaria: '#FFEEDF'
   }
   ]
 
-  const [jogadores, setJogadores] = useState({})
+  const [jogadores, setJogadores] = useState([])
 
   const aoNovoJogadorAdicionado = (jogador) => {
     console.log(jogador)
@@ -53,11 +53,19 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <Formulario nomesTimes={times.map(time => time.nome)} aoJogadorCadastrado={jogador => aoNovoJogadorAdicionado(jogador) }/>
+      <Formulario nomesTimes={times.map(time => time.nome)} aoJogadorCadastrado={jogador => 
+      aoNovoJogadorAdicionado(jogador) }/>
 
-      {times.map(time => <Time key={time.nome} nome={time.nome} corPrimaria={time.corPrimaria} corSecundaria={time.corSecundaria} />)}
 
-  
+      {times.map(time => <Time 
+        key={time.nome} 
+        nome={time.nome} 
+        corPrimaria={time.corPrimaria} 
+        corSecundaria={time.corSecundaria} 
+        jogadores={jogadores.filter(jogador => jogador.time === time.nome)}
+      />)}
+
+    
     </div>
   );
 }
