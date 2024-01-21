@@ -30,7 +30,7 @@ const Formulario = (props) => {
     return(
         <section className='formulario'>
             <form onSubmit={aoSalvar}>
-                <h2>Preencha os dados para criar o card dos jogadores</h2>
+                <h2>Preencha todos os dados para entrar em um grupo!</h2>
             <CampoTexto 
             obrigatorio={true} 
             label="Nome" 
@@ -59,7 +59,7 @@ const Formulario = (props) => {
             aoAlterado={valor => setTime(valor)}
             />
             <Botao > 
-                Criar Card
+                Entrar no Grupo
             </Botao >
             </form>
         </section>
